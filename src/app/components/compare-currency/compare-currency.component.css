@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(250, 250, 250);
+}
+
+.title-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-right: 12px;
+    padding-top: 20px;
+}
+
+.title-icon {
+    font-size: 36px;
+    padding-right: 12px;
+}
+
+.comparison-value-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.comparison-arrow-wrapper {
+    padding: 20px;
+}
+
+.comparison-history-wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.comparison-history-graph-wrapper {
+    flex-basis: 80%;
+}
+
+.comparison-history-30days-button-wrapper {
+    padding-top: 20px;
+}
+
+.comparison-history-90days-button-wrapper {
+    padding-top: 20px;
+}
+
+.comparison-history-180days-button-wrapper {
+    padding-top: 20px;
+}
+
+.comparison-history-custom-button-wrapper {
+    padding-top: 20px;
+}
+
+.currency-buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-button-wrapper {
+    padding-right: 10px;
+}
+
+.change-currency-button-wrapper {
+    padding-left: 10px;
+}

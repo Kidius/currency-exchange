@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Choose the currencies you wish to compare</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Compare</mat-label>
+        <mat-select [(ngModel)]="data.from" name="currencyFrom">
+            <mat-option *ngFor="let currencyId of data.currencyIdList" [value]="currencyId">
+            {{currencyId}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>To</mat-label>
+        <mat-select [(ngModel)]="data.to" name="currencyFrom">
+            <mat-option *ngFor="let currencyId of data.currencyIdList" [value]="currencyId">
+            {{currencyId}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions style='position:relative;'>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()" style='float:right'>Cancel</button>
+</div>

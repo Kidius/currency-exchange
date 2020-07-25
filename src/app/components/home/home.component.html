@@ -1,0 +1,43 @@
+<body>
+    <div class=title-wrapper>
+        <mat-icon aria-label="Currency exchange icon" class="title-icon">payments</mat-icon>
+        <h1>Currency Exchange</h1>
+    </div>
+    <div class="converter-wrapper">
+        <form autocomplete="off">
+            <div class="converter-currency-pick-wrapper">
+                <div class="converter-currency-from-select-wrapper">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Convert from</mat-label>
+                        <mat-select [(ngModel)]="currencyFrom" name="currencyFrom">
+                            <mat-option *ngFor="let currencyId of currencyIdList" [value]="currencyId">
+                            {{currencyId}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="converter-currency-to-select-wrapper">
+                    <mat-form-field appearance="fill">
+                        <mat-label>To</mat-label>
+                        <mat-select [(ngModel)]="currencyTo" name="currencyTo">
+                            <mat-option *ngFor="let currencyId of currencyIdList" [value]="currencyId">
+                            {{currencyId}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="converter-input-wrapper">
+                <mat-form-field>
+                    <input matInput type="number" (keypress)="checkIfNumber($event)" [(ngModel)]="amount" class="converter-input" name="converter-from-input"
+                        placeholder='Amount' value='1'>
+                </mat-form-field>       
+            </div>
+            <div class="converter-convert-button-wrapper">
+                <a mat-raised-button [routerLink]="['/compare', currencyFrom, currencyTo, amount]">Convert</a>
+            </div>
+        </form>
+    </div>    
+</body>
+
+<router-outlet></router-outlet>

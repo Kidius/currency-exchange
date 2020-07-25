@@ -1,0 +1,56 @@
+<body>
+    <div class=title-wrapper>
+        <mat-icon aria-label="Currency exchange icon" class="title-icon">payments</mat-icon>
+        <h1>Currency Exchange</h1>
+    </div>
+    <div class=comparison-wrapper>
+        <div class=comparison-value-wrapper>
+            <div class=comparison-from-wrapper>
+                <mat-form-field>
+                    <input matInput type="number" (keypress)="checkIfNumber($event)" placeholder={{currencyFrom}} value={{amount}} [(ngModel)]="amount">
+                </mat-form-field>
+            </div>
+            <div class=comparison-arrow-wrapper>
+                <button>
+                    <mat-icon aria-label="comparison-button" (click)="onClickSwitch()">compare_arrows</mat-icon>
+                </button>
+            </div>
+            <div class=comparison-to-wrapper>
+                <div class=comparison-to-currency-wrapper>
+                    <mat-form-field>
+                        <input matInput readonly=true placeholder={{currencyTo}} value={{converted}}>
+                    </mat-form-field>
+                    </div>
+            </div>
+        </div>
+        <div class=currency-buttons-wrapper>
+            <div class=update-button-wrapper>
+                <button mat-raised-button (click)="onClickUpdate()">Update</button>
+            </div>
+            <div class=change-currency-button-wrapper>
+                <button mat-raised-button (click)="onClickChangeCurrency()">Change currency</button>
+            </div>
+        </div>
+        <div class=comparison-history-wrapper>
+            <div class=comparison-history-graph-wrapper>
+                <div style="display: block">
+                    <canvas id="myChart" class=comparison-history-graph></canvas>
+                </div>
+            </div>
+            <div class=comparison-history-times-wrapper>
+                <div class=comparison-history-30days-button-wrapper>
+                    <button mat-raised-button (click)="onClick30()">30 Days</button>
+                </div>
+                <div class=comparison-history-90days-button-wrapper>
+                    <button mat-raised-button (click)="onClick90()">90 Days</button>
+                </div>
+                <div class=comparison-history-180days-button-wrapper>
+                    <button mat-raised-button (click)="onClick180()">180 Days</button>
+                </div>
+                <div class=comparison-history-custom-button-wrapper>
+                    <button mat-raised-button (click)="onClickCustom()">Custom</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
